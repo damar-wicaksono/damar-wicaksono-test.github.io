@@ -27,7 +27,7 @@ h2 + p {
   color: #fff;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 99;
 }
 .header-nav {
   float: right;
@@ -103,6 +103,9 @@ h2 + p {
 .footer-nav a {
   color: #ccc;
 }
+.footer-social-list {
+  margin-top: 1em;
+}
 
 /* HERO STYLES */
 .full-hero {
@@ -143,8 +146,6 @@ h2 + p {
   list-style: none;
   padding: 0;
   text-align: center;
-  position: relative;
-  z-index: 40;
 }
 .social-list > li {
   display: inline-block;
