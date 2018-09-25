@@ -4,7 +4,16 @@ html {
   padding: 0 30px;
 }
 body {
+  display: flex;
+  flex-direction: column;
   font-family: helvetica, arial, sans;
+  min-height: 100vh;
+}
+.content-container {
+  display: flex;
+  flex-grow: 1;
+  padding-top: 10vh;
+  width: 100%;
 }
 h1 {
   font-size: 7vw;
@@ -25,12 +34,14 @@ a {
 }
 p {
   line-height: 1.5;
+  margin: 0.75em 0;
 }
 
 /* HEADER STYLES */
 .header {
   background-color: #000;
   color: #fff;
+  flex-grow: 1;
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -118,8 +129,7 @@ p {
   background-color: #c7dbfc;
   background-size: cover;
   box-sizing: border-box;
-  height: 100vh;
-  padding-top: 10vh;
+  height: 90vh;
 }
 .full-hero:after {
   border: 10px solid;
@@ -161,17 +171,27 @@ p {
   color: #fff;
 }
 .home-callout {
+  align-items: center;
   background-color: #000;
   color: #fff;
+  display: flex;
+  flex-direction: row;
   padding: 7vh 0;
 }
+.home-callout h3 {
+  color: inherit;
+  margin-top: 1em;
+}
 .callout-title {
+  flex: 1 1 0;
   font-size: 5.75vw;
   text-align: right;
   text-transform: uppercase;
 }
 .callout-copy {
+  flex: 0 0 45em;
   font-size: 0.8rem;
+  padding: 0 3vw;
 }
 .home-section {
   margin: 6rem auto;
@@ -246,4 +266,69 @@ p {
 .bio-box .social-link {
   display: block;
   margin: 2em auto 1em;
+}
+
+/* 3-COLUMN STYLES */
+.three-col {
+  display: flex;
+  flex: 1;
+}
+.col {
+  box-sizing: border-box;
+  padding: 2em;
+}
+.three-col > .col ~ .col {
+  border-left: 1px solid rgba(0,0,0,0.1);
+}
+.three-col > .col-nav {
+  flex: 0 1 15em;
+  /* flex: 0 0 auto; */
+}
+.three-col > .col-content {
+  flex: 1 1 0;
+  /* flex: 1; */
+}
+.three-col > .col-aside {
+  flex: 0 1 20em;
+  /* flex: 0 0 auto; */
+}
+
+/* IMAGE GALLERY STYLES */
+.gallery-thumbs {
+  height: 90vh;
+  overflow: scroll;
+}
+.gallery-thumbs > .current {
+  cursor: default;
+}
+.gallery-thumbs div {
+  cursor: pointer;
+}
+.gallery-thumbs img {
+  box-sizing: border-box;
+  box-shadow: 0 0 0 5px transparent;
+  display: inline-block;
+  margin: 0 0 10px;
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+.gallery-thumbs img:hover {
+  opacity: 1.0;
+}
+.gallery-thumbs > .current img {
+  box-shadow: 0 0 0 5px #ed6e2f;
+  opacity: 1;
+}
+.gallery-photo {
+  position: relative;
+}
+.gallery-photo img {
+  width: 100%;
+}
+.gallery-info {
+  font-size: 0.8rem;
+}
+.gallery-info h3 {
+  margin-bottom: 1em;
 }
